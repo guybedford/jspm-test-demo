@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "istanbul-html-report.js": {
+      "globals": {
+        "process": "process"
+      }
+    }
+  },
+  "packages": {
+    "npm:istanbul@0.4.2": {
+      "meta": {
+        "lib/report/templates/*.txt": {
+          "loader": "text"
+        }
+      },
+      "map": {
+        "./lib/util/meta.js": "istanbul-meta.js",
+        "./lib/register-plugins.js": "istanbul-register-plugins.js",
+        "./lib/report/html.js": "istanbul-html-report.js"
+      }
+    }
+  }
+}
