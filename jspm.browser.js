@@ -3,6 +3,6 @@ SystemJS.config({
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*",
-    "jspm-test-runner/": "test-runner/"
+    "jspm-mocha-coverage/": "lib/"
   }
 });

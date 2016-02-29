@@ -1,8 +1,8 @@
 {
   "jspm": {
-    "name": "jspm-test-runner",
+    "name": "jspm-mocha-coverage",
     "directories": {
-      "lib": "test-runner"
+      "lib": "lib"
     },
     "dependencies": {
       "mocha": "npm:mocha@^2.4.5",

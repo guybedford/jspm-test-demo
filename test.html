@@ -3,8 +3,29 @@
   <script src="jspm.browser.js"></script>
   <script src="jspm.config.js"></script>
   <script>
-    System.import('jspm-test-runner')
+    var coverageType = 'text';
+    var output = function(output) {
+      console.log(output);
+    };
+    var error = function(err) {
+      console.error(err);
+    };
+
+    // PhantomJS -> JSON coverage output via window.callPhantom({ output: jsonString })
+    if (window.callPhantom) {
+      coverageType = 'json';
+      output = function(output) {
+        window.callPhantom({ output: output });
+      };
+      error = function(err) {
+        window.callPhantom({ error: err });
+      };
+    }
+
+
+    System.import('jspm-mocha-coverage')
     .then(function(runner) {
-      runner.run('example-tests/index.js', true);
-    });
+      return runner.run('example-tests/index.js', coverageType)
+    })
+    .then(output, output);
   </script>

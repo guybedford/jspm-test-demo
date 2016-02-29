@@ -34,7 +34,7 @@ SystemJS.config({
   },
 
   packages: {
-    "jspm-test-runner": {
+    "jspm-mocha-coverage": {
       "main": "runner.js"
     },
     "build-istanbul": {
