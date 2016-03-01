@@ -1,1 +1,1 @@
-jspm run jspm-mocha-coverage example-tests/index.js && istanbul report && open coverage/lcov-report/index.html
+jspm run jspm-mocha-coverage example-tests/index.js && istanbul report --include coverage.json && open coverage/lcov-report/index.html

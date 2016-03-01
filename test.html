@@ -22,10 +22,9 @@
       };
     }
 
-
     System.import('jspm-mocha-coverage')
     .then(function(runner) {
       return runner.run('example-tests/index.js', coverageType)
     })
-    .then(output, output);
+    .then(output, error);
   </script>
