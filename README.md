@@ -19,4 +19,4 @@ Or:
 ./test-phantom.sh
 ```
 
-(currently only working against SystemJS master build)
+Or open `test.html` to see the tests directly in the browser with coverage report in the JS console.
