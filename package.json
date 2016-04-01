@@ -35,6 +35,9 @@
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
     },
     "overrides": {
+      "npm:esprima@2.7.2": {
+        "jspmNodeConversion": false
+      },
       "npm:inherits@2.0.1": {
         "ignore": [
           "test.js"

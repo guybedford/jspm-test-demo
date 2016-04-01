@@ -1,15 +1,34 @@
 SystemJS.config({
+  transpiler: "plugin-babel",
+  pluginFirst: true,
+  map: {
+    "app": "example-app",
+    "istanbul": "build-istanbul"
+  },
+  packages: {
+    "jspm-mocha-coverage": {
+      "main": "runner.js"
+    },
+    "build-istanbul": {
+      "main": "node-build.js",
+      "format": "amd",
+      "map": {
+        "./node-build.js": {
+          "browser": "./browser-build.js"
+        }
+      }
+    }
+  }
+});
+
+SystemJS.config({
   packageConfigPaths: [
     "npm:@*/*.json",
     "npm:*.json",
     "github:*/*.json"
   ],
-  transpiler: "plugin-babel",
-  pluginFirst: true,
-
   map: {
     "amdefine": "npm:amdefine@1.0.0",
-    "app": "example-app",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
     "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
@@ -17,7 +36,6 @@ SystemJS.config({
     "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
-    "istanbul": "build-istanbul",
     "mocha": "npm:mocha@2.4.5",
     "module": "github:jspm/nodelibs-module@0.2.0-alpha",
     "os": "github:jspm/nodelibs-os@0.2.0-alpha",
@@ -35,20 +53,7 @@ SystemJS.config({
     "util": "github:jspm/nodelibs-util@0.2.0-alpha",
     "vm": "github:jspm/nodelibs-vm@0.2.0-alpha"
   },
-
   packages: {
-    "jspm-mocha-coverage": {
-      "main": "runner.js"
-    },
-    "build-istanbul": {
-      "main": "node-build.js",
-      "format": "amd",
-      "map": {
-        "./node-build.js": {
-          "browser": "./browser-build.js"
-        }
-      }
-    },
     "github:jspm/nodelibs-crypto@0.2.0-alpha": {
       "map": {
         "crypto-browserify": "npm:crypto-browserify@3.11.0"
@@ -84,11 +89,6 @@ SystemJS.config({
         "kind-of": "npm:kind-of@3.0.2",
         "longest": "npm:longest@1.0.1",
         "repeat-string": "npm:repeat-string@1.5.4"
-      }
-    },
-    "npm:ansi-styles@2.2.0": {
-      "map": {
-        "color-convert": "npm:color-convert@1.0.0"
       }
     },
     "npm:argparse@1.0.6": {
@@ -170,7 +170,7 @@ SystemJS.config({
     },
     "npm:chalk@1.1.1": {
       "map": {
-        "ansi-styles": "npm:ansi-styles@2.2.0",
+        "ansi-styles": "npm:ansi-styles@2.2.1",
         "escape-string-regexp": "npm:escape-string-regexp@1.0.5",
         "has-ansi": "npm:has-ansi@2.0.0",
         "strip-ansi": "npm:strip-ansi@3.0.1",
